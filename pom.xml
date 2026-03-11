@@ -37,14 +37,6 @@
                     <applicationName>${project.artifactId}</applicationName>
                     <replicas>1</replicas>
                     <vCores>1</vCores>
-                    <deploymentSettings>
-                      <http>
-                        <inbound>
-                          <forwardSslSession>true</forwardSslSession>
-                          <lastMileSecurity>true</lastMileSecurity>
-                        </inbound>
-                      </http>
-                    </deploymentSettings>
                   </cloudhub2Deployment>
                  </configuration>
 			</plugin>
@@ -98,6 +90,13 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+	<dependencies>
+        <dependency>
+            <groupId>org.mule.connectors</groupId>
+            <artifactId>mule-http-connector</artifactId>
+            <version>1.9.0</version>
+            <classifier>mule-plugin</classifier>
+        </dependency>
 	<distributionManagement>
         <repository>
             <id>Repository</id>
