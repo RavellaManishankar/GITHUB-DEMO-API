@@ -21,7 +21,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
-				<version>3.2.0</version>
+				<version>3.1.0</version>
 			</plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
@@ -34,9 +34,11 @@
                     <provider>MC</provider>
                     <environment>Sandbox</environment>
                     <target>Cloudhub-US-East-2</target>
+					<server>Repository</server>
                     <applicationName>${project.artifactId}</applicationName>
+				    <releaseChannel>NONE</releaseChannel>
                     <replicas>1</replicas>
-                    <vCores>1</vCores>
+                    <vCores>0.1</vCores>
                   </cloudhub2Deployment>
                  </configuration>
 			</plugin>
@@ -90,13 +92,6 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-	<dependencies>
-        <dependency>
-            <groupId>org.mule.connectors</groupId>
-            <artifactId>mule-http-connector</artifactId>
-            <version>1.9.0</version>
-            <classifier>mule-plugin</classifier>
-        </dependency>
 	<distributionManagement>
         <repository>
             <id>Repository</id>
@@ -105,5 +100,4 @@
             <layout>default</layout>
         </repository>
     </distributionManagement>
-
 </project>
